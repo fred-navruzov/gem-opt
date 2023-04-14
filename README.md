@@ -7,7 +7,7 @@ Applications to Ride-sourcing Platforms](https://arxiv.org/pdf/2102.05805.pdf)
 Contains wrappers to construct and solve correspondent [Linear Programming problem](https://en.wikipedia.org/wiki/Linear_programming):
 
 
-![init_formulation](images/problem_formulation_init.jpg)
+![init_formulation](https://raw.githubusercontent.com/fred-navruzov/gem-opt/master/images/problem_formulation_init.jpg)
 
 Thus, optimizing global diagnostic measures like supply-demand gap (SD) in aggregated fashion:
 <br>selecting a weight measure wᵢ and aggregating the local gaps $m_{i} = \log{s_{i}} - \log{d_{i}}$, 
@@ -66,7 +66,7 @@ $A_{s} = \frac{\sum_{i=1}^{n} s_{i}\cdot m_{i}}{\sum_{i=1}^{n}s_{i}}$
 
     So, omitting L1-norm in GEM objective will lead us to the next LP problem to solve:
 
-    ![dummy_var_formulation](images/problem_formulation_dummy_vars.jpg)
+    ![dummy_var_formulation](https://raw.githubusercontent.com/fred-navruzov/gem-opt/master/images/problem_formulation_dummy_vars.jpg)
 
 ---
 

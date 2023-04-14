@@ -7,13 +7,13 @@ license = "MIT"
 readme = "README.md"
 packages = [{include = "gem_opt"}]
 keywords = ["optimization", "graphs", "ride-hailing"]
-# repository = "https://github.com/yourusername/stock-portfolio-optimizer"
+repository = "https://github.com/fred-navruzov/gem-opt"
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
-    'Programming Language :: Cython',
+    "Programming Language :: Python :: Implementation :: CPython",
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3 :: Only',
