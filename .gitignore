@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+.venv/
+venv/
+
+# FastAPI
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# SQLite
+*.sqlite3
+
+# Miscellaneous
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.cache
+*.idea
+*.vscode
+*.log
+*.retry
+*~
+
+# Environment files
+*.env
+.env.*

@@ -1,0 +1,134 @@
+[tool.poetry]
+name = "gem-opt"
+version = "0.1.0"
+description = "Graph-Based Equilibrium Metric Optimization for Dynamic Supply-Demand Systems with Applications to Ride-sourcing Platforms, implemented in Python"
+authors = ["Fedir Navruzov <fred.navruzov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "gem_opt"}]
+keywords = ["optimization", "graphs", "ride-hailing"]
+# repository = "https://github.com/yourusername/stock-portfolio-optimizer"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    'Programming Language :: Cython',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+numpy = "^1.24.2"
+scipy = "^1.10.1"
+pandas = "^2.0.0"
+networkx = "^3.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+ruff = "^0.0.261"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.black]
+line_length = 88
+target_version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+(
+  \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)
+'''
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+# select = ["E", "F"]
+select = ["ALL"]
+ignore = [
+    "ANN",      # Type hints related, let mypy handle these.
+    "COM812",   # "Trailing comma missing". If black is happy, I'm happy.
+    "D100",     # "Missing docstring in public module". No module docstrings for now.
+    "D104",     # "Missing docstring in public package". No package docstrings for now.
+    "D203",     # To fix warnings
+    "D212",     # To fix warnings
+    "E501",     # "Line too long". If black is happy, I'm happy.
+    "EM101",    # "Exception must not use a string literal, assign to variable first"
+    "EM102",    # "Exception must not use an f-string literal, assign to variable first"
+    "G004",     # Allow f-strings in logging
+    "PTH",      # User Pathlib stuff over os.*. Should migrate to Pathlib at some point.
+    "RET504",   # "Unnecessary variable assignment before `return` statement"
+    "S101",     # "Use of `assert` detected"
+    "SIM108",   # "Use ternary operator ...". Ternary is harmful for readability in some cases.
+    "TRY003",   # "Avoid specifying long messages outside the exception class"
+    ]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "gem_opt/tests/*"
+]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py39"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10

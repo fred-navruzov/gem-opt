@@ -1,0 +1,22 @@
+ Ignore common unnecessary files and directories
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/*.log
+**/*.swp
+**/*.swo
+**/*.bak
+**/*.cache
+**/*.retry
+*~
+.DS_Store
+
+# Ignore frontend build files
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Ignore environment files
+*.env
+.env.*
