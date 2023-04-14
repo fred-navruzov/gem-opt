@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gem-opt"
-version = "0.1.0"
+version = "0.1.1"
 description = "Graph-Based Equilibrium Metric Optimization for Dynamic Supply-Demand Systems with Applications to Ride-sourcing Platforms, implemented in Python"
 authors = ["Fedir Navruzov <fred.navruzov@gmail.com>"]
 license = "MIT"
