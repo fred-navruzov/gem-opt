@@ -73,6 +73,19 @@ $A_{s} = \frac{\sum_{i=1}^{n} s_{i}\cdot m_{i}}{\sum_{i=1}^{n}s_{i}}$
 ## Example usage
 Here is an example of how to decrease supply-demand gap (SD gap), using SciPy's wrapper
 ```python
+import logging
+import sys
+from functools import partial
+
+import networkx as nx
+import numpy as np
+from gem_opt.const import DEFAULT_PARAMS
+from gem_opt.utils import create_fake_adjacency_matrix, fake_cost_fn
+from gem_opt.utils.graph_utils import construct_cost_graph
+from gem_opt.utils.metric_utils import calculate_optimized_supply, supply_demand_gap
+from gem_opt.wrappers import ScipyWrapper
+
+
 n = 5
 adj_matrix = create_fake_adjacency_matrix(n_nodes=n)
 
